@@ -1,14 +1,18 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="RedBlueBombs" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +20,67 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blue" translatesAutoresizingMaskIntoConstraints="NO" id="dVQ-My-iNx">
+                                <rect key="frame" x="20" y="40" width="140" height="140"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="140" id="2v9-pW-Lfk"/>
+                                    <constraint firstAttribute="height" constant="140" id="BoP-Ob-1TD"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="red" translatesAutoresizingMaskIntoConstraints="NO" id="XTK-AX-QSG">
+                                <rect key="frame" x="215" y="40" width="140" height="140"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="140" id="HDz-sH-nsq"/>
+                                    <constraint firstAttribute="width" constant="140" id="aGW-FK-haK"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yg5-wE-ULR">
+                                <rect key="frame" x="55.5" y="306" width="263" height="54"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
+                                <state key="normal" title="Hide Blue Bomb">
+                                    <color key="titleColor" red="0.1369100764972789" green="0.45317814625850339" blue="0.75213616695306129" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="hideBlueBomb:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0l1-XR-j8R"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xRg-q5-Wne">
+                                <rect key="frame" x="59.5" y="465" width="255" height="45"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
+                                <state key="normal" title="Hide Red Bomb">
+                                    <color key="titleColor" red="0.93333333330000001" green="0.29353710232721092" blue="0.24963829280340136" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="hideRedBomb:" destination="BYZ-38-t0r" eventType="touchUpInside" id="089-FD-9hA"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="yg5-wE-ULR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="IN9-yz-OgC"/>
+                            <constraint firstItem="xRg-q5-Wne" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="J5c-BI-zYv"/>
+                            <constraint firstAttribute="trailing" secondItem="XTK-AX-QSG" secondAttribute="trailing" constant="20" id="NBL-Ig-JbH"/>
+                            <constraint firstItem="dVQ-My-iNx" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="VfZ-pr-8ev"/>
+                            <constraint firstItem="dVQ-My-iNx" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="bbj-el-YdZ"/>
+                            <constraint firstItem="yg5-wE-ULR" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="h38-NY-uHH"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="xRg-q5-Wne" secondAttribute="bottom" constant="157" id="mBi-yr-FNR"/>
+                            <constraint firstItem="xRg-q5-Wne" firstAttribute="top" secondItem="yg5-wE-ULR" secondAttribute="bottom" constant="105" id="y9Q-5f-e8U"/>
+                            <constraint firstItem="XTK-AX-QSG" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="yu1-eF-IsZ"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="blueBomb" destination="dVQ-My-iNx" id="wfC-wb-UnS"/>
+                        <outlet property="redBomb" destination="XTK-AX-QSG" id="rb8-IQ-Xpd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="blue" width="256" height="256"/>
+        <image name="red" width="256" height="256"/>
+    </resources>
 </document>
